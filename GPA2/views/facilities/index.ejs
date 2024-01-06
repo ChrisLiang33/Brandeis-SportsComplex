@@ -1,0 +1,41 @@
+<% if (loggedIn && currentUser.isAdmin) { %>
+
+    <div class="w-75 m-auto">
+        <a class="btn btn-primary" href="/facilities/create">Add</a>
+    </div>
+<% } %>
+<table class="table w-75 m-auto">
+    <thead>
+    <tr>
+        <th scope="col">Name</th>
+        <th scope="col">type</th>
+        <th scope="col">description</th>
+        <th width="200px" scope="col">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% facilities.forEach(facility => { %>
+        <tr>
+            <td><%= facility.name %></td>
+            <td><%= facility.type %></td>
+            <td><%= facility.description %></td>
+            <td>
+                <a class="link-primary" href="<%= `/facilities/${facility._id}` %>"> Detail </a>
+                <% if (loggedIn && currentUser.isAdmin) { %>
+
+                |
+                <a class="link-primary" href="<%= `/facilities/${facility._id}/edit` %>"> Edit </a>
+                |
+                <a
+                        class="link-primary"
+                        href="<%= `/facilities/${facility._id}/delete?_method=DELETE` %>"
+                        onclick="return confirm('Are you sure you want to delete this record?')"
+                >Delete</a
+                >
+                <% } %>
+            </td>
+        </tr>
+    <% }); %>
+
+    </tbody>
+</table>

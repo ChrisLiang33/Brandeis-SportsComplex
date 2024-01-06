@@ -1,0 +1,51 @@
+<div class="w-75 m-auto">
+    <form method="POST" action="<%= `/users/${user._id}/edit?_method=PUT` %>">
+        <h2>Edit user</h2>
+        <div class="form-floating">
+            <input required
+                    type="text"
+                    name="first"
+                    class="form-control"
+                    id="inputFirstName"
+                    placeholder="First"
+                    autofocus
+                    value="<%= user.name.first %>"
+            />
+            <label for="inputFirstName">First Name</label>
+        </div>
+        <div class="form-floating">
+            <input required
+                    class="form-control"
+                    value="<%= user.name.last %>"
+                    type="text" name="last" id="inputLastName" placeholder="Last"
+            />
+            <label for="inputLastName">Last Name</label>
+        </div>
+        <div class="form-floating">
+            <input required
+                    class="form-control"
+                    type="password"
+                    name="password"
+                    value="<%= user.password %>"
+                    id="inputPassword"
+                    placeholder="Password"
+            />
+            <label for="inputPassword">Password</label>
+        </div>
+        <div class="form-floating">
+            <input required
+                    class="form-control"
+                    type="text"
+                    value="<%= user.email %>"
+                    name="email"
+                    id="inputEmail"
+                    placeholder="Email address"
+            />
+            <label for="inputEmail">Email address</label>
+        </div>
+        <div class="mt-4">
+            <button class="btn btn-primary" type="submit">Save</button>
+        </div>
+    </form>
+</div>
+

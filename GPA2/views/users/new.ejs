@@ -1,0 +1,43 @@
+<div class="w-50 m-auto">
+    <form action="/users/create" method="POST">
+        <h2>Create user</h2>
+        <div class="form-floating">
+            <input required
+                    type="text"
+                    name="first"
+                    class="form-control"
+                    id="inputFirstName"
+                    placeholder="First"
+                    autofocus
+            />
+            <label for="inputFirstName">First Name</label>
+        </div>
+        <div class="form-floating">
+            <input required  class="form-control" type="text" name="last" id="inputLastName" placeholder="Last" />
+            <label for="inputLastName">Last Name</label>
+        </div>
+        <div class="form-floating">
+            <input required
+                    class="form-control"
+                    type="password"
+                    name="password"
+                    id="inputPassword"
+                    placeholder="Password"
+            />
+            <label for="inputPassword">Password</label>
+        </div>
+        <div class="form-floating">
+            <input required
+                    class="form-control"
+                    type="text"
+                    name="email"
+                    id="inputEmail"
+                    placeholder="Email address"
+            />
+            <label for="inputEmail">Email address</label>
+        </div>
+        <div class="mt-4">
+            <button class="btn btn-primary" type="submit">Create</button>
+        </div>
+    </form>
+</div>

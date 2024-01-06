@@ -1,0 +1,39 @@
+<div class="w-50 m-auto">
+    <form action="/memberships/create" method="POST">
+        <h2>Create membership</h2>
+        <div class="form-floating">
+            <input required
+                    type="text"
+                    name="type"
+                    class="form-control"
+                    id="inputType"
+                    placeholder="Type"
+            />
+            <label for="inputType">Type</label>
+        </div>
+
+        <div class="form-floating">
+            <input required
+                    type="number"
+                    class="form-control"
+                    name="duration"
+                    id="inputDuration"
+                    placeholder="Duration"
+            />
+            <label for="inputDuration">Duration</label>
+        </div>
+        <div class="form-floating">
+            <input required
+                    type="number"
+                    class="form-control"
+                    name="price"
+                    id="inputPrice"
+                    placeholder="Price"
+            />
+            <label for="inputPrice">Price</label>
+        </div>
+        <div class="mt-4">
+            <button class="btn btn-primary" type="submit">Save</button>
+        </div>
+    </form>
+</div>

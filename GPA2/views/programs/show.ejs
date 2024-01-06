@@ -1,0 +1,31 @@
+<div class="w-75 m-auto">
+    <form>
+        <h2>Program Details</h2>
+        <div class="form-floating mb-2">
+            <div class="form-control"><%= program.name %></div>
+            <label for="inputName">Name</label>
+        </div>
+        <div class="form-floating mb-2">
+            <div class="form-control"><%= program.description %></div>
+            <label for="inputDescription">description</label>
+        </div>
+        <div class="form-floating mb-2">
+            <div class="form-control"><%= program.schedule %></div>
+            <label for="inputSchedule">schedule</label>
+        </div>
+        <div class="form-floating mb-2">
+            <div class="form-control"><%= program.instructor %></div>
+            <label for="inputInstructor">instructor</label>
+        </div>
+
+    </form>
+    <% if (loggedIn && currentUser.isAdmin) { %>
+
+    <div class="mt-4">
+        <a class="btn btn-primary" href="<%= `/programs/${program._id}/edit` %>">Edit Program Details</a>
+    </div>
+    <% } %>
+</div>
+
+
+

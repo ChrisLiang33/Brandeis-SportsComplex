@@ -1,0 +1,53 @@
+<div class="w-75 m-auto">
+    <form method="POST" action="<%= `/events/${event._id}/edit?_method=PUT` %>">
+        <h2>Edit event</h2>
+        <div class="form-floating">
+            <input required
+                    type="text"
+                    name="name"
+                    class="form-control"
+                    id="inputName"
+                    placeholder="Name"
+                    value="<%= event.name %>"
+            />
+            <label for="inputName">Name</label>
+        </div>
+
+        <div class="form-floating">
+            <input required
+                    class="form-control"
+                    name="description"
+                    value="<%= event.description %>"
+                    id="inputDescription"
+                    placeholder="Description"
+            />
+            <label for="inputDescription">Description</label>
+        </div>
+        <div class="form-floating">
+            <input required
+                    class="form-control"
+                    name="date"
+                    type="date"
+                    value="<%= event.date.toISOString().split('T')[0]
+                    %>"
+                    id="inputDate"
+                    placeholder="Date"
+            />
+            <label for="inputDate">Date</label>
+        </div>
+        <div class="form-floating">
+            <input required
+                    class="form-control"
+                    name="location"
+                    value="<%= event.location %>"
+                    id="inputLocation"
+                    placeholder="Location"
+            />
+            <label for="inputLocation">Location</label>
+        </div>
+        <div class="mt-4">
+            <button class="btn btn-primary" type="submit">Save</button>
+        </div>
+    </form>
+</div>
+

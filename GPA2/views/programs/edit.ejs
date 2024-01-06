@@ -1,0 +1,52 @@
+<div class="w-75 m-auto">
+    <form method="POST" action="<%= `/programs/${program._id}/edit?_method=PUT` %>">
+        <h2>Edit program</h2>
+        <div class="form-floating">
+            <input required
+                    type="text"
+                    name="name"
+                    class="form-control"
+                    id="inputName"
+                    placeholder="Name"
+                    value="<%= program.name %>"
+            />
+            <label for="inputName">Name</label>
+        </div>
+
+        <div class="form-floating">
+            <input required
+                    class="form-control"
+                    name="description"
+                    value="<%= program.description %>"
+                    id="inputDescription"
+                    placeholder="Description"
+            />
+            <label for="inputDescription">Description</label>
+        </div>
+        <div class="form-floating">
+            <input required
+                    class="form-control"
+                    name="schedule"
+                    value="<%= program.schedule %>"
+                    id="inputSchedule"
+                    placeholder="Schedule"
+            />
+            <label for="inputSchedule">Schedule</label>
+        </div>
+
+        <div class="form-floating">
+            <input required
+                    class="form-control"
+                    name="instructor"
+                    value="<%= program.instructor %>"
+                    id="inputInstructor"
+                    placeholder="Instructor"
+            />
+            <label for="inputInstructor">Instructor</label>
+        </div>
+        <div class="mt-4">
+            <button class="btn btn-primary" type="submit">Save</button>
+        </div>
+    </form>
+</div>
+

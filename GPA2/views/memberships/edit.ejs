@@ -1,0 +1,43 @@
+<div class="w-75 m-auto">
+    <form method="POST" action="<%= `/memberships/${membership._id}/edit?_method=PUT` %>">
+        <h2>Edit membership</h2>
+        <div class="form-floating">
+            <input required
+                    type="text"
+                    name="type"
+                    class="form-control"
+                    id="inputType"
+                    placeholder="Type"
+                    value="<%= membership.type %>"
+            />
+            <label for="inputType">Type</label>
+        </div>
+
+        <div class="form-floating">
+            <input required
+                    type="number"
+                    class="form-control"
+                    name="duration"
+                    value="<%= membership.duration %>"
+                    id="inputDuration"
+                    placeholder="Duration"
+            />
+            <label for="inputDuration">Duration</label>
+        </div>
+        <div class="form-floating">
+            <input required
+                    type="number"
+                    class="form-control"
+                    name="price"
+                    value="<%= membership.price %>"
+                    id="inputPrice"
+                    placeholder="Price"
+            />
+            <label for="inputPrice">Price</label>
+        </div>
+        <div class="mt-4">
+            <button class="btn btn-primary" type="submit">Save</button>
+        </div>
+    </form>
+</div>
+

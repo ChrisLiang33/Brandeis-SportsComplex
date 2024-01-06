@@ -1,0 +1,28 @@
+<div class="w-75 m-auto">
+    <form>
+        <h2>Membership Details</h2>
+        <div class="form-floating mb-2">
+            <div class="form-control"><%= membership.type %></div>
+            <label for="inputType">Type</label>
+        </div>
+        <div class="form-floating mb-2">
+            <div class="form-control"><%= membership.duration %></div>
+            <label for="inputDuration">duration</label>
+        </div>
+        <div class="form-floating mb-2">
+            <div class="form-control"><%= membership.price %></div>
+            <label for="inputPrice">price</label>
+        </div>
+
+    </form>
+    <% if (loggedIn && currentUser.isAdmin) { %>
+
+        <div class="mt-4">
+            <a class="btn btn-primary" href="<%= `/memberships/${membership._id}/edit` %>">Edit Membership Details</a>
+        </div>
+    <% } %>
+
+</div>
+
+
+

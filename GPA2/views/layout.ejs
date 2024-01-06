@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+    <title>Brandeis Sports Complex</title>
+    <link rel="stylesheet" href="/css/style.css" />
+
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+</head>
+
+<body>
+    <div class="d-flex align-items-center mx-auto"
+    style="height: 130px; margin-top: 67px; background-image: url('/img/banner.png'); 
+    background-size: cover; background-repeat: no-repeat; background-position:center; justify-content: space-between;">
+    <div></div>
+
+    <div class=" d-none d-lg-block row justify-content-end align-items-center" style="height: 130px; padding-right: 45px; padding-top: 25px;">
+      <!-- Social media icons -->
+      <div class=" col-auto" style="padding-right: 35px;">
+        <a href="https://www.facebook.com/brandeisjudges" class="text-white me-3 social-icon"><i class="fa fa-facebook fs-3 hover-effect"></i></a>
+        <a href="https://twitter.com/BrandeisJudges" class="text-white me-3 social-icon"><i class="fa fa-twitter fs-3"></i></a>
+        <a href="https://www.youtube.com/user/brandeisjudges" class="text-white me-3 social-icon"><i class="fa fa-youtube fs-3"></i></a>
+        <a href="https://www.instagram.com/brandeisjudges/" class="text-white me-3 social-icon"><i class="fa fa-instagram fs-3"></i></a>
+      </div>
+      <!-- Donate button -->
+      <div class="col-auto" style="padding-left:30px">
+        <a href="https://securelb.imodules.com/s/1614/20/interior.aspx?sid=1614&gid=1&pgid=1733&bledit=1&sort=1&dids=3441.7554.7555.7556.7481.7557.7558.7559.7560.7455.7561.7562.7581.7582.7583.7422.7211">
+          <button class="btn btn-block btn btn-md btn-primary rounded social-icon" style="background-color: white; color: black;">Donate</button>
+        </a>
+
+
+      </div>
+    </div>
+    </div>
+
+
+<nav class="navbar navbar-light navbar-expand-lg fixed-top" id="mainNav">
+    <div class="container">
+        <a
+                class="navbar-brand" href="/"
+        ><strong style="color: #0b346c">Gosman Center</strong></a
+        >
+        <button
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarResponsive"
+                class="navbar-toggler"
+                aria-controls="navbarResponsive"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+        >
+            <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" style="margin-top: 8px;color: #0b346c" href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link" style="margin-top: 8px;color: #0b346c" href="/about">About
+                        us</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" style="margin-top: 8px;color: #0b346c" href="/contact">Contact us</a>
+                </li>
+                <% if (loggedIn) { %>
+                    <li class="nav-item">
+                        <a class="nav-link" style="margin-top: 8px;color: #0b346c" href="/memberships"><strong>Membership</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="margin-top: 8px;color: #0b346c" href="/events"><strong>Event</strong>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a
+                                class="nav-link"
+                                style="margin-top: 8px;color: #0b346c"
+                                href="/programs"
+                        ><strong>Program</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a
+                                class="nav-link"
+                                style="margin-top: 8px;color: #0b346c"
+                                href="/facilities"
+                        ><strong>Facility</strong></a>
+                    </li>
+                <% } %>
+                <% if (loggedIn && currentUser.isAdmin) { %>
+                    <li class="nav-item">
+                        <a
+                                class="nav-link"
+                                style="margin-top: 8px;color: #0b346c"
+                                href="/users"
+                        ><strong>User</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a
+                                class="nav-link"
+                                style="margin-top: 8px;color: #0b346c"
+                                href="/contacts"
+                        ><strong>Feedback</strong></a>
+                    </li>
+                <% } %>
+
+                <% if (loggedIn) { %> <a
+                        class="btn btn-primary"
+                        href="<%= `/users/${currentUser._id}` %>"
+                ><%= currentUser.fullName %></a> <a class="btn btn-secondary" href="/users/logout">Log out</a>
+                <% } else { %> <a class="btn btn-primary" href="/users/login">Log In</a> <a
+                        class="btn btn-secondary"
+                        href="/users/signup"
+                >Sign up</a>
+                <% } %>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="flashes">
+    <% if (flashMessages) { %> <% if (flashMessages.success) { %>
+        <div class="flash success"><%= flashMessages.success %></div>
+    <% } else if (flashMessages.error){ %>
+        <div class="flash error"><%= flashMessages.error %></div>
+    <% } %>
+    <% } %>
+</div>
+
+</body>
+<%- body %>
+</html>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-lg-8 mx-auto">
+                <ul class="list-inline text-center">
+                    <li class="list-inline-item">
+                        <a href="https://www.facebook.com/brandeisjudges" class="text-blue me-3 social-icon"><i class="fa fa-facebook fs-3 hover-effect"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://twitter.com/BrandeisJudges" class="text-blue me-3 social-icon"><i class="fa fa-twitter fs-3"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://www.youtube.com/user/brandeisjudges" class="text-blue me-3 social-icon"><i class="fa fa-youtube fs-3"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://www.instagram.com/brandeisjudges/" class="text-blue me-3 social-icon"><i class="fa fa-instagram fs-3"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>

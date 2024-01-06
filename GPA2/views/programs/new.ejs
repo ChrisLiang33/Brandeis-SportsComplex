@@ -1,0 +1,47 @@
+<div class="w-50 m-auto">
+    <form action="/programs/create" method="POST">
+        <h2>Create program</h2>
+        <div class="form-floating">
+            <input required
+                    type="text"
+                    name="name"
+                    class="form-control"
+                    id="inputName"
+                    placeholder="Name"
+            />
+            <label for="inputName">Name</label>
+        </div>
+
+        <div class="form-floating">
+            <input required
+                    class="form-control"
+                    name="description"
+                    id="inputDescription"
+                    placeholder="Description"
+            />
+            <label for="inputDescription">Description</label>
+        </div>
+        <div class="form-floating">
+            <input required
+                    class="form-control"
+                    name="schedule"
+                    id="inputSchedule"
+                    placeholder="Schedule"
+            />
+            <label for="inputSchedule">Schedule</label>
+        </div>
+
+        <div class="form-floating">
+            <input required
+                    class="form-control"
+                    name="instructor"
+                    id="inputInstructor"
+                    placeholder="Instructor"
+            />
+            <label for="inputInstructor">Instructor</label>
+        </div>
+        <div class="mt-4">
+            <button class="btn btn-primary" type="submit">Save</button>
+        </div>
+    </form>
+</div>

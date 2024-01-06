@@ -1,0 +1,41 @@
+<div class="w-50 m-auto">
+    <form action="/facilities/create" method="POST">
+        <h2>Create facility</h2>
+        <div class="form-floating">
+            <input required
+                    type="text"
+                    name="name"
+                    class="form-control"
+                    id="inputName"
+                    placeholder="Name"
+                    autofocus
+
+            />
+            <label for="inputName">Name</label>
+        </div>
+
+        <div class="form-floating">
+            <input required
+                    class="form-control"
+                    name="type"
+
+                    id="inputType"
+                    placeholder="Type"
+            />
+            <label for="inputType">Type</label>
+        </div>
+        <div class="form-floating">
+            <input required
+                    class="form-control"
+                    name="description"
+
+                    id="inputDescription"
+                    placeholder="Description"
+            />
+            <label for="inputDescription">Description</label>
+        </div>
+        <div class="mt-4">
+            <button class="btn btn-primary" type="submit">Save</button>
+        </div>
+    </form>
+</div>

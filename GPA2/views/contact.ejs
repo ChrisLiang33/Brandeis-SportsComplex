@@ -1,0 +1,103 @@
+<header
+        class="masthead"
+        style="background-image: url('/img/contact-bg.jpg')"
+>
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-lg-8 mx-auto position-relative">
+                <div class="site-heading">
+                    <h1>Contact Us</h1>
+                    <span class="subheading">Have questions? I have answers.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 col-lg-8 mx-auto">
+            <p>
+                Address: Brandeis University, 415 South St, Waltham, MA 02453,
+                United States<br />Phone: +1 781-736-3600<br />Email:
+                gosman@brandeis.edu<br />Social Media Accounts:<br />Facebook:
+                @gosmancenter<br />Twitter: @GosmanCenter<br />Instagram:
+                @gosmancenter<br />You can visit the center's website for more
+                information about their facilities, programs, and services:
+                https://www.brandeisjudges.com/information/facilities/gosman.
+            </p>
+            <p>
+                Want to get in touch? Fill out the form below to send me a message
+                and I will get back to you as soon as possible!
+            </p>
+            <form id="contactForm" name="sentMessage" method="POST" action="/contacts/create">
+                <div class="control-group">
+                    <div class="form-floating controls mb-3">
+                        <input
+                                class="form-control"
+                                type="text"
+                                id="name"
+                                name="name"
+                                required=""
+                                placeholder="Name"
+                        /><label class="form-label" for="name">Name</label
+                        ><small class="form-text text-danger help-block"></small>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="form-floating controls mb-3">
+                        <input
+                                class="form-control"
+                                type="email"
+                                name="email"
+                                id="email"
+                                required=""
+                                placeholder="Email Address"
+                        /><label class="form-label">Email Address</label
+                        ><small class="form-text text-danger help-block"></small>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="form-floating controls mb-3">
+                        <input
+                                class="form-control"
+                                type="tel"
+                                name="title"
+                                id="phone"
+                                required=""
+                                placeholder="Phone Number"
+                        /><label class="form-label">Title</label
+                        ><small class="form-text text-danger help-block"></small>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="form-floating controls mb-3">
+                <textarea
+                        class="form-control"
+                        id="message"
+                        data-validation-required-message="Please enter a message."
+                        required=""
+                        name="issue"
+                        placeholder="Message"
+                        style="height: 150px"
+                ></textarea
+                ><label class="form-label">Message</label
+                        ><small class="form-text text-danger help-block"></small>
+                    </div>
+                </div>
+                <div id="success"></div>
+                <div class="mb-3">
+                    <button
+                            class="btn btn-primary"
+                            id="sendMessageButton"
+                            type="submit"
+                            style="background-color: #0b346c"
+                    >
+                        Send
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<hr />

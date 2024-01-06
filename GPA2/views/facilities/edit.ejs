@@ -1,0 +1,42 @@
+<div class="w-75 m-auto">
+    <form method="POST" action="<%= `/facilities/${facility._id}/edit?_method=PUT` %>">
+        <h2>Edit facility</h2>
+        <div class="form-floating">
+            <input required
+                    type="text"
+                    name="name"
+                    class="form-control"
+                    id="inputName"
+                    placeholder="Name"
+                    autofocus
+                    value="<%= facility.name %>"
+            />
+            <label for="inputName">Name</label>
+        </div>
+
+        <div class="form-floating">
+            <input required
+                    class="form-control"
+                    name="type"
+                    value="<%= facility.type %>"
+                    id="inputType"
+                    placeholder="Type"
+            />
+            <label for="inputType">Type</label>
+        </div>
+        <div class="form-floating">
+            <input required
+                    class="form-control"
+                    name="description"
+                    value="<%= facility.description %>"
+                    id="inputDescription"
+                    placeholder="Description"
+            />
+            <label for="inputDescription">Description</label>
+        </div>
+        <div class="mt-4">
+            <button class="btn btn-primary" type="submit">Save</button>
+        </div>
+    </form>
+</div>
+

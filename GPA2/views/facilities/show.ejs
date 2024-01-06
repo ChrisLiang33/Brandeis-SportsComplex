@@ -1,0 +1,27 @@
+<div class="w-75 m-auto">
+    <form>
+        <h2>Facility detail</h2>
+        <div class="form-floating mb-2">
+            <div class="form-control"><%= facility.name %></div>
+            <label for="inputFirstName">Name</label>
+        </div>
+        <div class="form-floating mb-2">
+            <div class="form-control"><%= facility.type %></div>
+            <label for="inputPassword">type</label>
+        </div>
+        <div class="form-floating mb-2">
+            <div class="form-control"><%= facility.description %></div>
+            <label for="inputEmail">description</label>
+        </div>
+
+    </form>
+    <% if (loggedIn && currentUser.isAdmin) { %>
+
+    <div class="mt-4">
+        <a class="btn btn-primary" href="<%= `/facilities/${facility._id}/edit` %>">Edit Facility Details</a>
+    </div>
+    <% } %>
+</div>
+
+
+

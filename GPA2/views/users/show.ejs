@@ -1,0 +1,39 @@
+<div class="w-75 m-auto">
+    <form>
+        <h2>User detail</h2>
+        <div class="form-floating mb-2">
+            <div class="form-control"><%= user.fullName %></div>
+            <label for="inputFirstName">Full name</label>
+        </div>
+        <div class="form-floating mb-2">
+            <div class="form-control"><%= user.password %></div>
+            <label for="inputPassword">Password</label>
+        </div>
+        <div class="form-floating mb-2">
+            <div class="form-control"><%= user.email %></div>
+            <label for="inputEmail">Email address</label>
+        </div>
+        <div class="form-floating mb-2">
+            <div class="form-control" style="height: auto;">
+                <% if (user.memberships) { %>
+                    <ul>
+                        <% user.memberships.forEach(function(membership) { %>
+                            <li><%= membership.type %></li>
+                        <% }) %>
+                    </ul>
+
+                <% } %>
+            </div>
+            <label for="inputEmail">Memberships</label>
+        </div>
+    </form>
+    <div class="mt-4">
+        <a class="btn btn-primary" href="<%=`/users/${user._id}/edit`%>">Edit User Details</a>
+        <a class="btn btn-danger" href="<%=`/users/${user._id}/delete`%>">Delete</a>
+
+    </div>
+
+</div>
+
+
+

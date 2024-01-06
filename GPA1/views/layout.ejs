@@ -1,0 +1,86 @@
+<!-- layout  -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+    <title>Gosman Sports and Convocation Center</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    /> 
+  </head>
+
+  <body>
+    <div class="d-flex align-items-center mx-auto"
+    style="height: 130px; margin-top: 67px; background-image: url('/img/header.jpg'); 
+    background-size: cover; background-repeat: no-repeat; background-position:center; justify-content: space-between;">
+<div></div>
+<div class=" d-none d-lg-block row justify-content-end align-items-center" style="height: 130px; padding-right: 45px; padding-top: 25px;">
+  <!-- Social media icons -->
+  <div class=" col-auto" style="padding-right: 35px;">
+    <a href="https://www.facebook.com/brandeisjudges" class="text-white me-3 social-icon"><i class="fa fa-facebook fs-3 hover-effect"></i></a>
+    <a href="https://twitter.com/BrandeisJudges" class="text-white me-3 social-icon"><i class="fa fa-twitter fs-3"></i></a>
+    <a href="https://www.youtube.com/user/brandeisjudges" class="text-white me-3 social-icon"><i class="fa fa-youtube fs-3"></i></a>
+    <a href="https://www.instagram.com/brandeisjudges/" class="text-white me-3 social-icon"><i class="fa fa-instagram fs-3"></i></a>
+  </div>
+  <!-- Donate button -->
+  <div class="col-auto" style="padding-left:30px">
+    <a href="https://securelb.imodules.com/s/1614/20/interior.aspx?sid=1614&gid=1&pgid=1733&bledit=1&sort=1&dids=3441.7554.7555.7556.7481.7557.7558.7559.7560.7455.7561.7562.7581.7582.7583.7422.7211">
+      <button class="btn btn-block btn btn-md btn-primary rounded social-icon" style="background-color: white; color: black;">Donate</button>
+    </a>
+
+
+  </div>
+</div>
+</div>
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top" id="mainNav">
+      <div class="container align-items-center justify-content-center">
+        <div class="d-flex align-items-center justify-content-center">
+          <% if (!locals.loggedIn) {  %>
+            <div class="col   justify-content-center">
+              <li class="nav-item" style="list-style: none;"><a class="nav-link custom-smaller " style="color:purple" href="/users/login">Log In</a></li>
+              <li class="nav-item" style="list-style: none;"><a class="nav-link custom-smaller " style="color:purple" href="/users/new">Sign Up</a></li>
+            </div>
+            
+          <% } else { %>
+            <div class="col   justify-content-center">
+              <a class="nav-link custom-smaller " style="color: #0b346c; padding-right: 10px; padding-left: -20px;" href="<%=`/users/${currentUser._id}`%>"><%= currentUser.name %></a>
+            <li class="nav-item" style="list-style: none;"><a class="nav-link custom-smaller" style="color: red" href="/users/logout">Log Out</a></li>
+            </div>
+            
+          <% } %>
+          <a class="navbar-brand ms-3" href="./"><strong style="color: #0b346c">Gosman Center</strong></a>
+        </div>
+        <button data-bs-toggle="collapse" data-bs-target="#navbarResponsive" class="navbar-toggler" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" style="color: #0b346c" href="/">Home</a></li>
+            <li class="nav-item"><a class="nav-link" style="color: #0b346c" href="/about">About Us</a></li>
+            <li class="nav-item"><a class="nav-link" style="color: #0b346c" href="/users">User</a></li>
+            <li class="nav-item"><a class="nav-link" style="color: #0b346c" href="/Membership"><strong>Membership</strong></a></li>
+            <li class="nav-item"><a class="nav-link" style="color: #0b346c" href="/programs"><strong>programs</strong></a></li>
+            <li class="nav-item"><a class="nav-link" style="color: #0b346c" href="/contact">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+    <div class="flashes">
+      <% if (locals.flashMessages) { %> <% if (locals.flashMessages.success) { %>
+      <div class="flash success"><%=locals.flashMessages.success %></div>
+      <%} else if (locals.flashMessages.error){ %>
+      <div class="flash error"><%= locals.flashMessages.error %></div>
+      <%} %> <%} %>
+    </div>
+
+    </body>
+    <%- body%>
+  </html>
